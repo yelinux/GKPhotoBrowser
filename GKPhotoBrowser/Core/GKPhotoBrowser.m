@@ -445,6 +445,10 @@ static Class imageManagerClass = nil;
     }
 }
 
+- (void)showToNav:(UINavigationController *)nav fromVC:(UIViewController *)vc {
+    [vc presentViewController:nav animated:NO completion:nil];
+}
+
 - (void)dismiss {
     GKPhotoView *photoView = [self currentPhotoView];
     photoView.isLayoutSubViews = YES;

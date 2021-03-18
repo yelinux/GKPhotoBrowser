@@ -136,7 +136,21 @@
         }
         
         browser.delegate = weakSelf;
-        [browser showFromVC:weakSelf];
+//        [browser showFromVC:weakSelf];
+//        //用另一种方式打开
+//        UINavigationController *nav = [UINavigationController rootVC:browser];
+//        nav.view.backgroundColor = UIColor.clearColor;
+////        nav.navigationBar.hidden = YES;
+//        nav.modalPresentationStyle = UIModalPresentationCustom;
+//        nav.modalPresentationCapturesStatusBarAppearance = YES;
+//        [weakSelf presentViewController:nav animated:NO completion:nil];
+        //用第二种方式打开
+        UINavigationController *nav = [UINavigationController rootVC:browser];
+        nav.view.backgroundColor = UIColor.clearColor;
+        nav.modalPresentationStyle = UIModalPresentationCustom;
+        nav.modalPresentationCapturesStatusBarAppearance = YES;
+        [browser showToNav:nav fromVC:weakSelf];
+        
         weakSelf.browser = browser;
     };
     return cell;

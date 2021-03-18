@@ -178,6 +178,14 @@ typedef void(^layoutBlock)(GKPhotoBrowser *photoBrowser, CGRect superFrame);
 - (void)showFromVC:(UIViewController *)vc;
 
 /**
+ 显示图片浏览器
+ 
+ @param nav 容器
+ @param vc 控制器
+ */
+- (void)showToNav:(UINavigationController *)nav fromVC:(UIViewController *)vc;
+
+/**
  隐藏图片浏览器
  */
 - (void)dismiss;
